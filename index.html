@@ -27,7 +27,16 @@ h2{font-family:Georgia,serif;font-size:clamp(30px,4vw,42px);color:var(--green);m
 .about{background:var(--cream)}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.about-img{height:470px;border-radius:8px;background:url("images/1 (7).jpeg") center/cover;box-shadow:var(--shadow)}.about-text p{margin:16px 0;color:#566159}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{padding:27px;border:1px solid #e8e4d9;border-radius:8px;background:white;box-shadow:0 7px 25px rgba(0,0,0,.05)}.icon{font-size:32px;color:var(--gold);margin-bottom:12px}.card h3{color:var(--green);margin-bottom:8px}
 .program{background:var(--green);color:white}.program h2{color:white}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:600px}th,td{text-align:left;padding:16px;border-bottom:1px solid rgba(255,255,255,.15)}th{color:var(--gold);font-size:13px;text-transform:uppercase;letter-spacing:1px}
-.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:250px 250px;gap:14px}.g{border-radius:8px;background-position:center;background-size:cover}.g1{grid-row:span 2;background-image:url("images/1 (6).jpeg")}.g2{background-image:url("images/1 (7).jpeg")}.g3{background-image:url("images/1 (5).jpeg")}.g4{background-image:url("images/1 (4).jpeg")}.g5{background-image:url("images/1 (3).jpeg")}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.gallery .g,.gallery-photo{display:block;width:100%;height:220px;border-radius:8px;overflow:hidden}
+.gallery .g{background-position:center;background-size:cover}
+.g1{background-image:url("images/1 (6).jpeg")}
+.g2{background-image:url("images/1 (7).jpeg")}
+.g3{background-image:url("images/1 (5).jpeg")}
+.g4{background-image:url("images/1 (4).jpeg")}
+.g5{background-image:url("images/1 (3).jpeg")}
+.gallery-photo{object-fit:cover;cursor:zoom-in;transition:transform .2s}
+.gallery-photo:hover{transform:scale(1.02)}
 .register{background:var(--cream)}.form{max-width:800px;margin:auto;background:#fff;padding:32px;border-radius:10px;box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}label{font-size:13px;font-weight:700;color:var(--green)}input,select,textarea{width:100%;margin-top:7px;padding:12px;border:1px solid #ddd;border-radius:5px;font:inherit}textarea{min-height:110px;resize:vertical}.full{grid-column:1/-1}
 .map{height:360px;border:0;width:100%;border-radius:8px;box-shadow:var(--shadow)}.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:35px;align-items:center}.contact-box{padding:30px;background:var(--green);color:#fff;border-radius:8px}.contact-box h2{color:#fff}.contact-item{margin:18px 0}.contact-item strong{color:var(--gold);display:block}
 footer{background:var(--green-dark);color:#dbe1dc;padding:28px 0;text-align:center;font-size:14px}
@@ -51,7 +60,7 @@ footer{background:var(--green-dark);color:#dbe1dc;padding:28px 0;text-align:cent
 }
 .photo-note{font-family:"Times New Roman",Times,serif;font-size:12px;text-align:center;text-indent:0!important;color:#666!important;margin-top:4px!important}
 @media(max-width:850px){nav{gap:10px;font-size:12px}.cards{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid{grid-template-columns:1fr}.about-img{height:340px}.report-page{padding:42px 38px}}
-@media(max-width:650px){.nav{min-height:70px}nav{display:none;position:absolute;top:70px;left:0;right:0;background:var(--green-dark);padding:20px;flex-direction:column;align-items:flex-start}nav.open{display:flex}.menu{display:block}.cards,.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:190px 190px 190px}.g1{grid-row:auto;grid-column:span 2}section{padding:58px 0}.hero{min-height:600px}.report-page{width:96%;padding:28px 22px}.report-photos{grid-template-columns:1fr}.report-photos img{height:220px}}
+@media(max-width:650px){.nav{min-height:70px}nav{display:none;position:absolute;top:70px;left:0;right:0;background:var(--green-dark);padding:20px;flex-direction:column;align-items:flex-start}nav.open{display:flex}.menu{display:block}.cards,.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery .g,.gallery-photo{height:160px}.g1{grid-row:auto;grid-column:auto}section{padding:58px 0}.hero{min-height:600px}.report-page{width:96%;padding:28px 22px}.report-photos{grid-template-columns:1fr}.report-photos img{height:220px}}
 </style>
 </head>
 <body>
@@ -100,10 +109,74 @@ footer{background:var(--green-dark);color:#dbe1dc;padding:28px 0;text-align:cent
   </tbody></table></div>
   <p style="margin-top:18px;opacity:.8">* Programul este orientativ și poate fi modificat. Contactează clubul pentru confirmare.</p>
 </div></section>
+
 <section id="galerie"><div class="container">
-  <div class="section-head"><div class="kicker">Galerie</div><h2>Lumea AVANGARD</h2><p>Fotografii ale clubului, copiilor și activităților sportive.</p></div>
-  <div class="gallery"><div class="g g1"></div><div class="g g2"></div><div class="g g3"></div><div class="g g4"></div><div class="g g5"></div></div>
+  <div class="section-head">
+    <div class="kicker">Galerie</div>
+    <h2>Lumea AVANGARD</h2>
+    <p>Fotografii ale clubului, copiilor și activităților sportive.</p>
+  </div>
+
+  <div class="gallery">
+    <div class="g g1" role="img" aria-label="Fotografie AVANGARD 1"></div>
+    <div class="g g2" role="img" aria-label="Fotografie AVANGARD 2"></div>
+    <div class="g g3" role="img" aria-label="Fotografie AVANGARD 3"></div>
+    <div class="g g4" role="img" aria-label="Fotografie AVANGARD 4"></div>
+    <div class="g g5" role="img" aria-label="Fotografie AVANGARD 5"></div>
+    <img class="gallery-photo" src="images/horse1.JPG" alt="AVANGARD — fotografie 1" loading="lazy">
+    <img class="gallery-photo" src="images/horse2.JPG" alt="AVANGARD — fotografie 2" loading="lazy">
+    <img class="gallery-photo" src="images/horse3.JPG" alt="AVANGARD — fotografie 3" loading="lazy">
+    <img class="gallery-photo" src="images/horse4.JPG" alt="AVANGARD — fotografie 4" loading="lazy">
+    <img class="gallery-photo" src="images/horse5.JPG" alt="AVANGARD — fotografie 5" loading="lazy">
+    <img class="gallery-photo" src="images/horse6.JPG" alt="AVANGARD — fotografie 6" loading="lazy">
+    <img class="gallery-photo" src="images/horse7.JPG" alt="AVANGARD — fotografie 7" loading="lazy">
+    <img class="gallery-photo" src="images/horse8.JPG" alt="AVANGARD — fotografie 8" loading="lazy">
+    <img class="gallery-photo" src="images/horse9.JPG" alt="AVANGARD — fotografie 9" loading="lazy">
+    <img class="gallery-photo" src="images/horse10.JPG" alt="AVANGARD — fotografie 10" loading="lazy">
+    <img class="gallery-photo" src="images/horse11.JPG" alt="AVANGARD — fotografie 11" loading="lazy">
+    <img class="gallery-photo" src="images/horse12.jpeg" alt="AVANGARD — fotografie 12" loading="lazy">
+    <img class="gallery-photo" src="images/horse13.png" alt="AVANGARD — fotografie 13" loading="lazy">
+    <img class="gallery-photo" src="images/horse14.jpeg" alt="AVANGARD — fotografie 14" loading="lazy">
+    <img class="gallery-photo" src="images/horse15.jpeg" alt="AVANGARD — fotografie 15" loading="lazy">
+    <img class="gallery-photo" src="images/horse16.jpg" alt="AVANGARD — fotografie 16" loading="lazy">
+    <img class="gallery-photo" src="images/horse17.jpg" alt="AVANGARD — fotografie 17" loading="lazy">
+    <img class="gallery-photo" src="images/horse18.jpg" alt="AVANGARD — fotografie 18" loading="lazy">
+    <img class="gallery-photo" src="images/horse19.jpg" alt="AVANGARD — fotografie 19" loading="lazy">
+    <img class="gallery-photo" src="images/horse20.jpg" alt="AVANGARD — fotografie 20" loading="lazy">
+    <img class="gallery-photo" src="images/horse21.jpg" alt="AVANGARD — fotografie 21" loading="lazy">
+    <img class="gallery-photo" src="images/horse22.jpg" alt="AVANGARD — fotografie 22" loading="lazy">
+    <img class="gallery-photo" src="images/horse23.jpeg" alt="AVANGARD — fotografie 23" loading="lazy">
+    <img class="gallery-photo" src="images/horse24.jpeg" alt="AVANGARD — fotografie 24" loading="lazy">
+    <img class="gallery-photo" src="images/horse25.jpeg" alt="AVANGARD — fotografie 25" loading="lazy">
+    <img class="gallery-photo" src="images/horse26.jpeg" alt="AVANGARD — fotografie 26" loading="lazy">
+    <img class="gallery-photo" src="images/horse28.jpeg" alt="AVANGARD — fotografie 28" loading="lazy">
+    <img class="gallery-photo" src="images/horse29.jpg" alt="AVANGARD — fotografie 29" loading="lazy">
+    <img class="gallery-photo" src="images/horse30.jpg" alt="AVANGARD — fotografie 30" loading="lazy">
+    <img class="gallery-photo" src="images/horse31.jpg" alt="AVANGARD — fotografie 31" loading="lazy">
+    <img class="gallery-photo" src="images/horse32.jpg" alt="AVANGARD — fotografie 32" loading="lazy">
+    <img class="gallery-photo" src="images/horse33.jpg" alt="AVANGARD — fotografie 33" loading="lazy">
+    <img class="gallery-photo" src="images/horse34.jpg" alt="AVANGARD — fotografie 34" loading="lazy">
+    <img class="gallery-photo" src="images/horse35.jpg" alt="AVANGARD — fotografie 35" loading="lazy">
+    <img class="gallery-photo" src="images/horse36.jpg" alt="AVANGARD — fotografie 36" loading="lazy">
+    <img class="gallery-photo" src="images/horse37.jpg" alt="AVANGARD — fotografie 37" loading="lazy">
+    <img class="gallery-photo" src="images/horse38.jpg" alt="AVANGARD — fotografie 38" loading="lazy">
+    <img class="gallery-photo" src="images/horse39.jpg" alt="AVANGARD — fotografie 39" loading="lazy">
+    <img class="gallery-photo" src="images/horse40.jpg" alt="AVANGARD — fotografie 40" loading="lazy">
+    <img class="gallery-photo" src="images/horse41.jpg" alt="AVANGARD — fotografie 41" loading="lazy">
+    <img class="gallery-photo" src="images/horse42.jpg" alt="AVANGARD — fotografie 42" loading="lazy">
+    <img class="gallery-photo" src="images/horse43.jpg" alt="AVANGARD — fotografie 43" loading="lazy">
+    <img class="gallery-photo" src="images/horse44.jpg" alt="AVANGARD — fotografie 44" loading="lazy">
+    <img class="gallery-photo" src="images/horse45.jpg" alt="AVANGARD — fotografie 45" loading="lazy">
+    <img class="gallery-photo" src="images/horse46.jpg" alt="AVANGARD — fotografie 46" loading="lazy">
+    <img class="gallery-photo" src="images/horse47.jpg" alt="AVANGARD — fotografie 47" loading="lazy">
+    <img class="gallery-photo" src="images/horse48.jpg" alt="AVANGARD — fotografie 48" loading="lazy">
+    <img class="gallery-photo" src="images/horse49.jpg" alt="AVANGARD — fotografie 49" loading="lazy">
+    <img class="gallery-photo" src="images/horse50.jpg" alt="AVANGARD — fotografie 50" loading="lazy">
+    <img class="gallery-photo" src="images/horse52.jpg" alt="AVANGARD — fotografie 52" loading="lazy">
+    <img class="gallery-photo" src="images/horse53.jpg" alt="AVANGARD — fotografie 53" loading="lazy">
+  </div>
 </div></section>
+
 
 <section class="report-section" id="raport">
   <div class="container report-intro"><div class="kicker">Document oficial</div><h2>Raportul de activitate pentru anul 2025</h2><p>Asociația Obștească Clubul Sportiv de Hipism pentru copii și juniori „AVANGARD”</p></div>
@@ -251,6 +324,21 @@ loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin">
 </main>
 <footer><div class="container">© 2026 AVANGARD — Club de Hipism pentru Copii • Chișinău</div></footer>
 <script>
+
+document.querySelectorAll('.gallery-photo').forEach(function(img) {
+  img.addEventListener('click', function() {
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:99999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;padding:20px';
+    var bigImage = document.createElement('img');
+    bigImage.src = img.src;
+    bigImage.alt = img.alt;
+    bigImage.style.cssText = 'max-width:95vw;max-height:95vh;object-fit:contain';
+    overlay.appendChild(bigImage);
+    overlay.addEventListener('click', function() { overlay.remove(); });
+    document.body.appendChild(overlay);
+  });
+});
+
 document.querySelectorAll('.report-photos img').forEach(function(img) {
   img.style.cursor = 'zoom-in';
   img.addEventListener('click', function() {
